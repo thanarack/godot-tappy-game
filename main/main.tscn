@@ -1,0 +1,138 @@
+[gd_scene load_steps=11 format=3 uid="uid://fgmcq1ytrgav"]
+
+[ext_resource type="Script" path="res://main/main.gd" id="1_fk1ge"]
+[ext_resource type="Texture2D" uid="uid://dtocb7si6slap" path="res://assets/background/sky.png" id="1_h712f"]
+[ext_resource type="LabelSettings" uid="uid://cviw7iji3dq75" path="res://assets/LG_72_RED.tres" id="3_fj6t7"]
+[ext_resource type="FontFile" uid="uid://dhbbfhm8mgesr" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="4_jenrn"]
+[ext_resource type="AudioStream" uid="uid://b6n0b7c7kg55x" path="res://assets/audio/bgm_menu.mp3" id="5_bcd2o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eilox"]
+font = ExtResource("4_jenrn")
+font_size = 48
+font_color = Color(0.996078, 0.92549, 0.917647, 1)
+outline_size = 10
+outline_color = Color(0.188235, 0.180392, 0.65098, 0.937255)
+shadow_size = 10
+shadow_color = Color(0.176471, 0.407843, 0.917647, 0.862745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kcyo0"]
+font = ExtResource("4_jenrn")
+font_size = 24
+font_color = Color(0.784314, 0.243137, 0.243137, 1)
+outline_size = 3
+outline_color = Color(0.843137, 0.305882, 0.305882, 1)
+shadow_size = 3
+shadow_color = Color(0.843137, 0.305882, 0.305882, 0.176471)
+
+[sub_resource type="Animation" id="Animation_oh8mi"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC/Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qm5xc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC/Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_av7n1"]
+_data = {
+"RESET": SubResource("Animation_qm5xc"),
+"flash": SubResource("Animation_oh8mi")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fk1ge")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h712f")
+expand_mode = 4
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 24
+
+[node name="Label" type="Label" parent="MC"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "TAPPY
+PLANE"
+label_settings = ExtResource("3_fj6t7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MC"]
+layout_mode = 2
+text = "Press Space
+To Play"
+label_settings = SubResource("LabelSettings_eilox")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HB" type="HBoxContainer" parent="MC"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MC/HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hight Score"
+label_settings = SubResource("LabelSettings_kcyo0")
+vertical_alignment = 1
+
+[node name="HightScoreLabel" type="Label" parent="MC/HB"]
+layout_mode = 2
+text = "000"
+label_settings = SubResource("LabelSettings_kcyo0")
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "flash"
+libraries = {
+"": SubResource("AnimationLibrary_av7n1")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bcd2o")
+autoplay = true
+mix_target = 1

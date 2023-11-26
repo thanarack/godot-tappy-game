@@ -1,0 +1,12 @@
+res://assets/LG_48_RED.tres::ef72ccd4766be40c0fd14683361fef84::1701003739::res://.godot/exported/133200997/export-5bf0dc9d6a50be5d9aa9a6d12420cd67-LG_48_RED.res
+res://assets/LG_72_RED.tres::ee78673b373937232623f36c236dc10f::1701011734::res://.godot/exported/133200997/export-cb0efdec121fe078ba46208171bfa908-LG_72_RED.res
+res://game/game.tscn::eb6ec5c464342ef4fc502349246a5550::1701018070::res://.godot/exported/133200997/export-3c5491bc1cb430bead51b94ed5d36eda-game.scn
+res://game_over/game_over.tscn::654faad7afa7435d66f560286786ec89::1701010338::res://.godot/exported/133200997/export-854e5d9735e3c4bfef3a0fc298b56dd1-game_over.scn
+res://hud/hud.tscn::b76592636b2b55ed4186aefbc504a0b7::1701015179::res://.godot/exported/133200997/export-52930d4a902a7043e922338d65f6e679-hud.scn
+res://laser/laser.tscn::3e024d1ffbfa935f2ec51ca752ba414c::1701018070::res://.godot/exported/133200997/export-33d15217e801f29cd8dd77e3f22c5686-laser.scn
+res://main/main.tscn::b657d6379d64161ac2689b89d044ea99::1701015179::res://.godot/exported/133200997/export-435f623093a3e2498450e744191b98a6-main.scn
+res://pipe/pipe.tscn::0f19d1fbe0de9396ab7e0a3e0e6b9ee5::1701018070::res://.godot/exported/133200997/export-294de4de5b3a654eb8c8e60fc0fcfe00-pipe.scn
+res://pipes/pipes.tscn::12daf68eea4bc48fd98d0c8b97937494::1701018071::res://.godot/exported/133200997/export-8adfe197b174c7206fff020b1dfa3070-pipes.scn
+res://plane_cb/planed_cb.tscn::2baf4ad9991eac681610ab1bf4d3d9be::1701010394::res://.godot/exported/133200997/export-167224b97d866c666c338746d7b317a2-planed_cb.scn
+res://scrolling_bg/scrolling_bg.tscn::f9116c328f4a91b02aaf53563cbe2b9b::1701018070::res://.godot/exported/133200997/export-316d520f1475b22d786752535505c126-scrolling_bg.scn
+res://scrolling_layer/scrolling_layer.tscn::3ad87673e426ce048562576cc35d0c96::1701018070::res://.godot/exported/133200997/export-4340077130231061604fd993a247e1e6-scrolling_layer.scn
